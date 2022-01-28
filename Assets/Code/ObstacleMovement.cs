@@ -9,6 +9,7 @@ public class ObstacleMovement : MonoBehaviour
     GameObject obstacle;
     void Start()
     {
+    	//setting variabes to their game components for later use
         rb2d = GetComponent<Rigidbody2D>();
         obstacle = GetComponent<GameObject>();
     }
@@ -17,10 +18,11 @@ public class ObstacleMovement : MonoBehaviour
     void Update()
     {
         rb2d.velocity = new Vector2(-1.0f, 0.0f);
-
+        //check if pipe position is outside of camera
         if(rb2d.position.x  < -1.0f)
         {
-        	Debug.Log("Out Of Camera Left");
+        	//Debug.Log("Out Of Camera Left");
+        	//destroy pipes
         	Destroy(gameObject);
         }
     }
