@@ -19,8 +19,10 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //checks if player controller script collision is true
          if(GameObject.Find("Player").GetComponent<player_controller>().collision)
          {
+             //freezes pipe
              rb2d.constraints = RigidbodyConstraints2D.FreezeAll;       
          }
 

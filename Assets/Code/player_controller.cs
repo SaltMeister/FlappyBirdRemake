@@ -39,6 +39,7 @@ public class player_controller : MonoBehaviour
     {
         rb2d.gravityScale = 1.0f;
         collision = true;
+        //removes player collision
         GetComponent<Collider2D>().enabled = false;
         rb2d.AddForce(transform.up * 1f, ForceMode2D.Impulse );
     }
