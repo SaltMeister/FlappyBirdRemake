@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class player_controller : MonoBehaviour
 {
-	Rigidbody2D rb2d;
-    Animator anim;
+	private Rigidbody2D rb2d;
+    private Animator anim;
+    public GameObject pipes;
+    public GameObject spawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,9 @@ public class player_controller : MonoBehaviour
         		anim.SetBool("isClicked", false);
         }
 
-        //if()
-        	Debug.Log("Collision");
+    }
+    void OnCollisionEnter2D()
+    {
+        Debug.Log("Collision");
     }
 }
