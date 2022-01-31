@@ -62,10 +62,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215407287330575587, guid: 68be3de4a18f3ef459518ff40c6c1dfb,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7368643128011446209, guid: 7304751f7f991ed44b5847984666241c,
+        type: 3}
     - target: {fileID: 9157074500602502824, guid: 68be3de4a18f3ef459518ff40c6c1dfb,
         type: 3}
       propertyPath: m_Name
-      value: BottomPipe Variant
+      value: pipePair
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68be3de4a18f3ef459518ff40c6c1dfb, type: 3}
