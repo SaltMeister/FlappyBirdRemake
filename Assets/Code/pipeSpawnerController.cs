@@ -6,6 +6,8 @@ public class pipeSpawnerController : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameObject spawner;
+    GameObject player;
+    player_controller playerController;
     public GameObject pipe;
     public float pipeInterval;
     private float timer = 0.0f;
@@ -13,6 +15,8 @@ public class pipeSpawnerController : MonoBehaviour
     private Vector3 pos;
     void Start()
     {
+        player = GameObject.Find("Player");
+        playerController = player.GetComponent<player_controller>();
         //pos = gameObject.transform.position;
         Debug.Log(gameObject.transform.position.x);
         
@@ -31,6 +35,8 @@ public class pipeSpawnerController : MonoBehaviour
             Instantiate(pipe, pos, transform.rotation);
             timer = 0.0f;
         }
-            
+        
+        if(playerController.collision == true)
+            Destroy(gameObject);
     }
 }

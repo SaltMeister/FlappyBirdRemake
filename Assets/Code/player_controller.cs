@@ -6,11 +6,14 @@ public class player_controller : MonoBehaviour
 {
 	private Rigidbody2D rb2d;
     private Animator anim;
+    public GameObject button;
     public GameObject pipes;
     public bool collision;
+    public bool paused;
     // Start is called before the first frame update
     void Start()
     {
+        paused = false;
     	rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collision = false;
@@ -19,11 +22,12 @@ public class player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !collision)
+        if ((Input.GetButtonDown("Fire1") && !collision) && !paused)
         {
         	anim.SetBool("isClicked", true);
         	rb2d.velocity = new Vector2(0.0f, 0.0f);
-        	Debug.Log(rb2d.velocity);
+        	Debug.Log(button.transform.position);
+            Debug.Log(Input.mousePosition);
             rb2d.AddForce(transform.up * 1f, ForceMode2D.Impulse );
 
         }
