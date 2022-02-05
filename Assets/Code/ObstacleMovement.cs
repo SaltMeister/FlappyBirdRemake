@@ -36,4 +36,14 @@ public class ObstacleMovement : MonoBehaviour
         	Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //Debug.Log(other);
+        //if the trigger collider2d is player updateScore
+        if(other.gameObject.name == "Player")
+        {
+            Debug.Log(other);
+            GameObject.Find("Player").GetComponent<player_controller>().updateScore();
+        }
+    }
 }

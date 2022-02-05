@@ -15,6 +15,7 @@ public class pipeSpawnerController : MonoBehaviour
     private Vector3 pos;
     void Start()
     {
+
         player = GameObject.Find("Player");
         playerController = player.GetComponent<player_controller>();
         //pos = gameObject.transform.position;
