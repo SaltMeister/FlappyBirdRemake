@@ -16,6 +16,7 @@ public class pauseController : MonoBehaviour
     {
 
     }
+    //not fully working as intented
     public void pauseControl()
     {
         if(Time.timeScale != 0)

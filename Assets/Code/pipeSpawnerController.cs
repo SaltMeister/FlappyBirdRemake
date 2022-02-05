@@ -15,7 +15,7 @@ public class pipeSpawnerController : MonoBehaviour
     private Vector3 pos;
     void Start()
     {
-
+        //gets playerController to have public values from player_controller script
         player = GameObject.Find("Player");
         playerController = player.GetComponent<player_controller>();
         //pos = gameObject.transform.position;
@@ -37,6 +37,7 @@ public class pipeSpawnerController : MonoBehaviour
             timer = 0.0f;
         }
         
+        //play when player variable collison is true
         if(playerController.collision == true)
             Destroy(gameObject);
     }

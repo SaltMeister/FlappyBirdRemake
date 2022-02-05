@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//needed to use Text
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -26,6 +27,7 @@ public class player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //player movment controller
         if ((Input.GetButtonDown("Fire1") && !collision) && !paused)
         {
         	anim.SetBool("isClicked", true);
@@ -43,6 +45,7 @@ public class player_controller : MonoBehaviour
 
     }
 
+    //if player hits pipes
     void OnCollisionEnter2D()
     {
         rb2d.gravityScale = 1.0f;
@@ -52,6 +55,7 @@ public class player_controller : MonoBehaviour
         rb2d.AddForce(transform.up * 1f, ForceMode2D.Impulse );
     }
 
+    //when player passes pipe
     public void updateScore()
     {
         scoreCounter++;
